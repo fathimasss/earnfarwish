@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn-FARWISH</title>
+    <link rel="icon" href="loginlogo.jpg" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            background-color: #b6a4dd;
+        }
+
+        .rounded-logo {
+            border-radius: 50px;
+            margin-top: 20px;
+            border: 2px solid #9a6ef6;
+        }
+
+        .With-Drawal, .Log-Out, .Referal-Now {
+            color: rgb(117 69 216);
+            padding: 12px;
+            cursor: pointer;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            padding: 10px;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 768px) {
+            .navbar-nav {
+                margin-top: -10px;
+                padding-left: 200px;
+            }
+
+            .navbar-light .navbar-nav .nav-link {
+                color: rgb(117 69 216);
+            }
+
+            .video-container {
+                max-width: 645px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+<div class="row">
+    <div class="col-md-6 col-12 my-auto">
+        <img class="rounded-logo" src="loginlogo.jpg" alt="FARWISH Logo" width="100" height="100">
+    </div>
+    <div class="col-md-6 col-12 my-auto">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item With-Drawal">
+                        <a class="nav-link" href="#">Withdrawal</a>
+                    </li>
+                    <li class="nav-item Referal-Now">
+                        <a class="nav-link" href="#">ReferalNOW</a>
+                    </li>
+                    <li class="nav-item Log-Out">
+                        <a id="logout" class="nav-link" href="#">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="video-container">
+    <video controls loop autoplay muted>
+        <source src="home3.jpg.mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="video-container">
+    <video controls loop autoplay muted>
+        <source src="home.jpg.mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="video-container">
+    <video controls loop autoplay muted>
+        <source src="home2.jpg.mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script>
+    document.querySelector(".Referal-Now").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "ReferalNow.html";
+    });
+    document.querySelector(".With-Drawal").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "withdrawal.html";
+    });
+    document.querySelector("#logout").addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "logout.html";
+        fetch('/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+    });
+</script>
+</body>
+</html>
